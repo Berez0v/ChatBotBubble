@@ -47,14 +47,14 @@ export const Badge = (props: Props) => {
       Powered by
       <a
         ref={liteBadge}
-        href={'https://asistent.net'}
+        href={'https://aichat.md'}
         target="_blank"
         rel="noopener noreferrer"
         class="lite-badge"
         id="lite-badge"
         style={{ 'font-weight': 'bold', color: props.poweredByTextColor ?? defaultTextColor }}
       >
-        <span> Asistent.net</span>
+        <span>aichat.md</span>
       </a>
     </span>
   );
