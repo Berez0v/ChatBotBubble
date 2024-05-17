@@ -802,7 +802,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
             >
               <span style={{ 'font-family': 'Poppins, sans-serif' }}>Clear</span>
             </DeleteButton>
-            {props?.toggleBot && <button onClick={props.toggleBot}> Pizda121</button>}
+            {props?.toggleBot && <button onClick={props.toggleBot}> Pizda12214211</button>}
           </div>
         ) : null}
         <div class="flex flex-col w-full h-full justify-start z-0">
