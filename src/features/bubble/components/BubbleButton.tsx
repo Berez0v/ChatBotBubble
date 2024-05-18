@@ -1,7 +1,6 @@
-import { Show } from 'solid-js';
+import { Show, createEffect } from 'solid-js';
 import { isNotDefined } from '@/utils/index';
 import { ButtonTheme } from '../types';
-
 type Props = ButtonTheme & {
   isBotOpened: boolean;
   toggleBot: () => void;
@@ -13,13 +12,17 @@ const defaultBottom = '20';
 const defaultRight = '20';
 
 export const BubbleButton = (props: Props) => {
+  // createEffect(() => {
+  //    props.isBotOpened);
+  // });
+
   return (
     <button
       part="button"
       onClick={() => props.toggleBot()}
       class={
         `fixed shadow-md rounded-full hover:scale-110 active:scale-95 transition-transform duration-200 flex justify-center items-center animate-fade-in` +
-        (props.size === 'large' ? ' w-16 h-16' : ' w-12 h-12') + (props.isBotOpened ? 'hidden md:flex' : '')
+        (props.size === 'large' ? ' w-16 h-16' : ' w-12 h-12') + (props.isBotOpened ? ' hidden sm:flex ' : '')
       }
       style={{
         'background-color': props.backgroundColor ?? defaultButtonColor,

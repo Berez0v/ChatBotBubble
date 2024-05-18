@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Local Development</title>
+</head>
+
+<body>
+    <script type="module">
+        import Chatbot from 'http://localhost:5678/web.js';
+
+        Chatbot.init({
+            chatflowid: "34680f7c-79a6-4d22-a234-a1fc7d0aa8d9",
+            apiHost: "https://bubble.aichat.md",
+            theme: {
+                button: {
+                    backgroundColor: "#3B81F6",
+                    right: 20,
+                    bottom: 20,
+                    size: "medium",
+                },
+                chatWindow: {
+                    welcomeMessage: "Hello! This is cdsfdsfsdfsdfsdustom welcome message",
+                    backgroundColor: "#ffffff",
+                    fontSize: 16,
+                    poweredByTextColor: "#303235",
+                    title: "PIDAsaf",
+                    botMessage: {
+                        backgroundColor: "#f7f8ff",
+                        textColor: "#303235",
+                    },
+                    userMessage: {
+                        backgroundColor: "#3B81F6",
+                        textColor: "#ffffff",
+                    },
+                    textInput: {
+                        placeholder: "Type your question",
+                        backgroundColor: "#ffffff",
+                        textColor: "#303235",
+                        sendButtonColor: "#3B81F6",
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -741,7 +741,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
     <>
       <div
         ref={botContainer}
-        class={'relative flex w-full h-full text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' + props.class}
+        class={'relative flex w-full h-full text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container rounded-[18px] ' + props.class}
         onDragEnter={handleDrag}
       >
         {isDragActive() && (
@@ -779,8 +779,8 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
             style={{
               background: props.bubbleBackgroundColor,
               color: props.bubbleTextColor,
-              'border-top-left-radius': props.isFullPage ? '0px' : '6px',
-              'border-top-right-radius': props.isFullPage ? '0px' : '6px',
+              'border-top-left-radius': props.isFullPage ? '0px' : '18px',
+              'border-top-right-radius': props.isFullPage ? '0px' : '18px',
             }}
           >
             <Show when={props.titleAvatarSrc}>
@@ -802,10 +802,13 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
             >
               <span style={{ 'font-family': 'Poppins, sans-serif' }}>Clear</span>
             </DeleteButton>
-            {props?.toggleBot && <button onClick={props.toggleBot}> Pizda12214211</button>}
+            {props?.toggleBot && <button class="text-gray-200 opacity-75 mr-2" onClick={props.toggleBot}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-8 w-8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+
+            </button>}
           </div>
         ) : null}
-        <div class="flex flex-col w-full h-full justify-start z-0">
+        <div class="flex flex-col w-full h-full justify-start z-0 rounded-[18px]">
           <div
             ref={chatContainer}
             class="overflow-y-scroll flex flex-col flex-grow min-w-full w-full px-3 pt-[70px] relative scrollable-container chatbot-chat-view scroll-smooth"
