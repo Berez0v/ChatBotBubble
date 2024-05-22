@@ -36,6 +36,7 @@ export type ChatWindowTheme = {
   backgroundColor?: string;
   height?: number;
   width?: number;
+  footerText?: string;
   fontSize?: number;
   userMessage?: UserMessageTheme;
   botMessage?: BotMessageTheme;

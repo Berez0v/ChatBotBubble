@@ -4,6 +4,7 @@ type Props = {
   botContainer: HTMLDivElement | undefined;
   poweredByTextColor?: string;
   badgeBackgroundColor?: string;
+  footer?: string;
 };
 
 const defaultTextColor = '#303235';
@@ -56,6 +57,7 @@ export const Badge = (props: Props) => {
       >
         <span> aichat.md</span>
       </a>
+      {props.footer && <span style={{ color: defaultTextColor }}> {" | " + props.footer}</span>}
     </span>
   );
 };

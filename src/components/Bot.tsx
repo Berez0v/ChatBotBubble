@@ -67,6 +67,7 @@ export type BotProps = {
   userMessage?: UserMessageTheme;
   textInput?: TextInputTheme;
   poweredByTextColor?: string;
+  footerText?: string;
   badgeBackgroundColor?: string;
   bubbleBackgroundColor?: string;
   bubbleTextColor?: string;
@@ -379,6 +380,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
           return [...messages];
         });
       }
+
       if (!isChatFlowAvailableToStream()) {
         let text = '';
         if (data.text) text = data.text;
@@ -402,6 +404,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
       return;
     }
   };
+  console.log(botProps?.footerText);
 
   const clearChat = () => {
     try {
@@ -811,7 +814,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
         <div class="flex flex-col w-full h-full justify-start z-0 rounded-[18px]">
           <div
             ref={chatContainer}
-            class="overflow-y-scroll flex flex-col flex-grow min-w-full w-full px-3 pt-[70px] relative scrollable-container chatbot-chat-view scroll-smooth"
+            class="overflow-y-scroll flex flex-col flex-grow min-w-full w-full px-3 pt-[70px] relative scrollable-container chatbot-chat-view scroll-smooth tracking-wide"
           >
             <For each={[...messages()]}>
               {(message, index) => {
@@ -877,7 +880,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
           </div>
           <Show when={messages().length === 1}>
             <Show when={starterPrompts().length > 0}>
-              <div class="w-full flex flex-row flex-wrap px-5 py-[10px] gap-2">
+              <div class="w-full   flex flex-row  overflow-x-auto  md:flex-wrap md:items-stretch px-5 py-[10px] gap-[4px] tracking-wide ">
                 <For each={[...starterPrompts()]}>{(key) => <StarterPromptBubble prompt={key} onPromptClick={() => promptClick(key)} />}</For>
               </div>
             </Show>
@@ -983,7 +986,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
               />
             )}
           </div>
-          <Badge badgeBackgroundColor={props.badgeBackgroundColor} poweredByTextColor={props.poweredByTextColor} botContainer={botContainer} />
+          <Badge badgeBackgroundColor={props.badgeBackgroundColor} footer={props.footerText} poweredByTextColor={props.poweredByTextColor} botContainer={botContainer} />
         </div>
       </div>
       {sourcePopupOpen() && <Popup isOpen={sourcePopupOpen()} value={sourcePopupSrc()} onClose={() => setSourcePopupOpen(false)} />}

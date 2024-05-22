@@ -99,6 +99,7 @@ export const Bubble = (props: BubbleProps) => {
             apiHost={props.apiHost}
             observersConfig={props.observersConfig}
             toggleBot={toggleBot}
+            footerText={bubbleProps.theme?.chatWindow?.footerText}
           />
         </Show>
       </div>
